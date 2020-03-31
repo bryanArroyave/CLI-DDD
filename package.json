@@ -1,0 +1,27 @@
+{
+  "name": "cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node src prueba",
+    "delete": "npm uninstall express awilix cors body-parser compression",
+    "start": "node src create:skeleton",
+    "install": "node src create:skeleton --install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "awilix": "^4.2.5",
+    "body-parser": "^1.19.0",
+    "chalk": "^3.0.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "execa": "^4.0.0",
+    "express": "^4.17.1",
+    "inquirer": "^7.1.0",
+    "listr": "^0.14.3",
+    "minimist": "^1.2.5"
+  }
+}
