@@ -1,6 +1,7 @@
 const minimist = require("minimist");
 const { createSkeleton } = require("./creaters/createSkeleton")
 const { createController } = require("./creaters/createController")
+const { createDto } = require("./creaters/createDto")
 const { createRoute } = require("./creaters/createRoute")
 const execa = require("execa")
 const Listr = require("listr")
@@ -60,6 +61,43 @@ switch (command) {
             console.log("%s", chalk.red.bold(error))
         }
 
+        break
+    case 'create:dto':
+
+        try {
+            createDto(name);
+        } catch (error) {
+            console.log("%s", chalk.red.bold(error))
+        }
+
+        break
+
+    case 'create:all':
+
+        const tasks2 = new Listr([
+            {
+                title: 'creating controller',
+                task: () => createController(name)
+            },
+            {
+                title: 'creating route',
+                task: () => createRoute(name)
+            }
+            ,
+            {
+                title: 'creating dto',
+                task: () => createDto(name)
+            }
+        ]);
+
+        tasks2.run()
+            .catch((e) => console.log("Error %s ", chalk.red.bold(e)))
+            .then((r) => {
+
+                console.log("Created %s ", chalk.greenBright.bold("Successfully!"))
+
+            })
+        break;
         break
     case 'prueba':
 

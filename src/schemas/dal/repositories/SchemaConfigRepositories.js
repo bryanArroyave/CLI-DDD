@@ -2,9 +2,9 @@ function Schema() {
 
     return `
 module.exports = {
-
-};
-      `
+    REPO: "db"
+}
+    `
 }
 
 

@@ -1,4 +1,4 @@
-function SchemaContainer(schemaName = require('../../schemaConfig')) {
+function SchemaContainer(schemaName = require('../../schemaConfig').schemaName) {
 
   const lower = schemaName.toLowerCase();
   const className = lower.charAt(0).toUpperCase() + lower.slice(1);
