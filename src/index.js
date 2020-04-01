@@ -8,7 +8,8 @@ const Listr = require("listr")
 const chalk = require("chalk")
 
 const argv = minimist(process.argv.slice(2))
-const allDependencies = ["express", "awilix", "cors", "body-parser", "compression"]
+
+const allDependencies = ["express", "awilix", "cors", "body-parser", "compression", "dotenv", "pg", "pg-hstore", "sequelize", "structure"]
 
 const command = argv._.shift()
 const name = argv._.shift();

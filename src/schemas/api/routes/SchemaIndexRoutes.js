@@ -10,7 +10,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const compression = require("compression");
 
-module.exports = function({ ${className}Route }) {
+module.exports = function({ ${className}Routes }) {
   const router = Router();
   const apiRoute = Router();
 
@@ -19,7 +19,7 @@ module.exports = function({ ${className}Route }) {
     .use(bodyParser.json())
     .use(compression());
 
-  apiRoute.use("/${lower}", ${className}Route);
+  apiRoute.use("/${lower}", ${className}Routes);
 
   router.use("/api", apiRoute);
 

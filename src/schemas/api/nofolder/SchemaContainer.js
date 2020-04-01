@@ -17,9 +17,6 @@ const Routes = require("../api/routes");
 const ${className}Routes = require("../api/routes/${lower}.routes");
 
 
-// business
-const { ${className}Business } = require("../domain/");
-
 // controllers
 const { ${className}Controller } = require("../api/controllers");
 
@@ -30,7 +27,7 @@ const { ${className}Service } = require("../services");
 const { ${className}Repository } = require("../dal/repositories");
 
 // db
-const db = require("../dal/models");
+const db = require("../dal/entities");
 
 const container = createContainer();
 
@@ -56,10 +53,7 @@ container
    ${className}Repository: asClass(${className}Repository).singleton()
    
   })
-  .register({
-    ${className}Business: asClass(${className}Business).singleton()
-   
-  });
+
 
 module.exports = container;
 `

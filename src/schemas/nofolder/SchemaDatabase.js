@@ -12,7 +12,7 @@ const config = DB;
 const sequelize = new Sequelize(
     config.database,
     config.username,
-    config.pasword,
+    config.password,
     {
         host: config.host,
         dialect: config.dialect,

@@ -12,9 +12,9 @@ class ${className}Repository {
     get${className}s() {
         return this._db.findAll();
     }
-    create${className}(user) {
+    create${className}(${lower}) {
 
-        return this._db.create(user);
+        return this._db.create(${lower});
     }
     get${className}(id) {
         return this._db.findOne(id);

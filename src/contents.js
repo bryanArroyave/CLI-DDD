@@ -25,15 +25,20 @@ module.exports = {
   "index.entities": require("./schemas/dal/entities/SchemaIndexEntities")(),
   "entities": require("./schemas/dal/entities/SchemaEntities")(),
   "dal.mapper": require("./schemas/mappers/SchemaDalMapper")(),
-  "config.repositories": require("./schemas/dal/entities/SchemaEntities")(),
+  "config.repositories": require("./schemas/dal/repositories/SchemaConfigRepositories")(),
   "index.repositories": require("./schemas/dal/repositories/SchemaIndexRepositories")(),
   "dbRepositories": require("./schemas/dal/repositories/SchemaDbRepository")(),
   "fakeRepositories": require("./schemas/dal/repositories/SchemaFakeRepository")(),
 
+  //DOMAIN
+
+  "index.domain": require("./schemas/domain/SchemaIndexDomain")(),
+  "domain.mapper": require("./schemas/mappers/SchemaDomainMapper")(),
+  "domain": require("./schemas/domain/SchemaDomain")(),
 
   //CONFIG
 
-  "index.enviroments": require("./schemas/config/SchemaIndexEnviroments")(),
+  "index.environments": require("./schemas/config/SchemaIndexEnviroments")(),
   "development": require("./schemas/config/SchemaEnviroment")("dev"),
   "production": require("./schemas/config/SchemaEnviroment")("prod"),
   "qa": require("./schemas/config/SchemaEnviroment")("qa"),

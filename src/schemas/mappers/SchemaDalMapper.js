@@ -6,8 +6,8 @@ function Schema(schemaName = require('../../schemas/schemaConfig').schemaName) {
     return `
 module.exports = {
 
-    toDBEntity(catador) {
-        const { id, name, lastname } = catador;
+    toDBEntity(${lower}) {
+        const { id, name, lastname } = ${lower};
 
         return { id, name, lastname }; // clase del dominio
     }

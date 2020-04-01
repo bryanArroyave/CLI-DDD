@@ -4,16 +4,16 @@ function Schema(schemaName = require('../../schemas/schemaConfig').schemaName) {
     const className = lower.charAt(0).toUpperCase() + lower.slice(1);
 
     return `
-const { Catador } = require("../");
+const { ${className} } = require("../");
 
 
 
 module.exports = {
 
-    toDomainEntity(catador) {
-        const { id, name, lastname } = catador;
+    toDomainEntity(${lower}) {
+        const { id, name, lastname } = ${lower};
 
-        return new Catador({ id, name, lastname }); // clase del dominio
+        return new ${className}({ id, name, lastname }); // clase del dominio
     }
 
 

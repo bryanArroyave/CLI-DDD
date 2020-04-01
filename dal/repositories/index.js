@@ -8,5 +8,5 @@ function getRepository() {
 
 module.exports = {
 
-    UserRepository: require("./" + getRepository() + "/cat.repository")
+    UserRepository: require("./" + getRepository() + "/user.repository")
 }

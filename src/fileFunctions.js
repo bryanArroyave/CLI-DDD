@@ -4,16 +4,10 @@ const chalk = require("chalk");
 module.exports = {
 
     readFile: readFile = (_path) => {
-
-
         const content = fs.readFileSync(_path, "utf-8");
         return content;
-
     },
     createFile: createFile = (_path, content) => {
-
-        console.log(_path);
-
         fs.appendFile(_path, '', (e) => {
             if (e) { throw e }
             fs.writeFileSync(_path, content);
@@ -32,11 +26,10 @@ module.exports = {
     appendToFile: updateFile = (_path, content) => {
         const courrentContent = readFile(_path);
         const newContent = `
- ${content}
  ${courrentContent}
+ ${content}
         `
         createFile(_path, newContent)
-
     }
 
 

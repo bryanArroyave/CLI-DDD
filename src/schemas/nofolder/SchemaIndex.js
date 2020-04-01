@@ -1,4 +1,7 @@
-function Schema() {
+function Schema(schemaName = require('../../schemas/schemaConfig').schemaName) {
+
+    const lower = schemaName.toLowerCase();
+    const className = lower.charAt(0).toUpperCase() + lower.slice(1);
 
 return `
 
@@ -7,7 +10,7 @@ const container = require("./api/container");
 const app = container.resolve("app");
 const db = container.resolve("db");
 
-const { UserEntity } = db;
+const { ${className}Entity } = db;
 
 app
     .start()
@@ -15,7 +18,7 @@ app
 
         console.log();
         
-        await db.UserEntity.sequelize.sync();
+        await db.${className}Entity.sequelize.sync();
 
     })
     .catch(err => {

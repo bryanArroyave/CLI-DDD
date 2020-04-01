@@ -1,7 +1,7 @@
 
 module.exports = {
 
-    CatEntity: require("./cat.entity"),
+    UserEntity: require("./user.entity"),
 }
 
     
